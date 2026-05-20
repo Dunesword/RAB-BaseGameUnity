@@ -15,4 +15,15 @@ public class UIController : MonoBehaviour {
     {
         SceneManager.LoadScene("LevelOne");
     }
+
+    public void OnClickControlsButton()
+    {
+        SceneManager.LoadScene("HELP");
+    }
+
+    public void OnClickMainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
