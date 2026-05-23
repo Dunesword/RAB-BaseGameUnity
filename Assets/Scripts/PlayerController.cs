@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float startingTime;  // variable to hold the game's starting time
     public string min;
     public string sec;
+    public GameObject gameOverPanel;
 
     //These private variables are initialized in the Start
     private Rigidbody rb;
@@ -24,7 +25,16 @@ public class PlayerController : MonoBehaviour
 
     // Audio
     public AudioClip coinSFX;
+    public AudioClip potionSFX;
+    public AudioClip waterSFX;
     private AudioSource audioSource;
+
+    //Items
+    public int[] potions;
+    public TMP_Text[] potionsText;
+
+    //Animators
+    public Animator doorAnimator;
 
 
     void Start()
@@ -43,6 +53,8 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        PlayerInput();
+
         if (gameOver) // condition that the game is NOT over; returns the false value
             return;
         float timer = Time.time - startingTime;     // local variable to updated time
@@ -80,41 +92,97 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeathZone"))
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
-        }
-
-        if (other.gameObject.CompareTag("Grow"))
-        {
-            if (transform.localScale.x <= 2.0f)
-            {
-                transform.localScale *= 1.25f;    // increase scale by 25%
-            }
+            Time.timeScale = 0;
+            audioSource.clip = waterSFX;
+            audioSource.Play();
+            gameOverPanel.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("Shrink"))
         {
+            potions[0]++;
+            PlayPotionoAudio();
+        }
+
+        if (other.gameObject.CompareTag("Grow"))
+        {
+            potions[1]++;
+            PlayPotionoAudio();
+        }
+
+        if (other.gameObject.CompareTag("Net"))
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
+            }
+
+            /*else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1, rb.linearVelocity.z);
+            }*/
+
+            else
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -0.8f, rb.linearVelocity.z);
+            }
+        }
+
+    }
+
+    //Updates UI
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+        if(count >= 10)
+        {
+            gameOver = true; // returns true value to signal game is over
+            timeText.color = Color.green;  // changes timer's color
+            doorAnimator.SetTrigger("OpenDoor");
+            //winText.text = "You win!";
+            //Time.timeScale = 0;
+        }
+
+        for (int i = 0; i < potions.Length; i++)
+        {
+            potionsText[i].text = potionsText[i].text.Substring(0, potionsText[i].text.IndexOf(' ') + 1) + potions[i].ToString();
+        }
+    }
+
+    void PlayerInput()
+    {
+        //Shrink
+        if (Input.GetKeyDown("q") && potions[0] > 0)
+        {
+            potions[0]--;
             if (transform.localScale.x >= 0.5f)
             {
                 transform.localScale *= 0.75f;     // decreases scale by 25%
             }
+            SetCountText();
         }
 
-        if (other.gameObject.CompareTag("Jump"))
+        //Grow
+        if (Input.GetKeyDown("e") && potions[1] > 0)
         {
-            rb.AddForce(new Vector3(0.0f, 300.0f, 0.0f));
+            potions[1]--;
+            if (transform.localScale.x <= 2.0f)
+            {
+                transform.localScale *= 1.25f;    // increase scale by 25%
+            }
+            SetCountText();
+        }
+
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, GetComponent<Collider>().bounds.extents.y + 0.1f))
+        {
+            rb.AddForce(new Vector3(0.0f, 3.0f, 0.0f) * 3.0f, ForceMode.Impulse);
         }
     }
 
-    void SetCountText()
+    void PlayPotionoAudio()
     {
-        countText.text = "Count: " + count.ToString();
-        if(count >= 5)
-        {
-            gameOver = true; // returns true value to signal game is over
-            timeText.color = Color.green;  // changes timer's color
-            winText.text = "You win!";
-            Time.timeScale = 0;
-        }
+        audioSource.clip = potionSFX;
+        audioSource.Play();
     }
 }

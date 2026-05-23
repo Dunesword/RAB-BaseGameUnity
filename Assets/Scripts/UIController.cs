@@ -26,4 +26,9 @@ public class UIController : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void OnClickRetryButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
