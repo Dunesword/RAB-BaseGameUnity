@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Net"))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
             }
