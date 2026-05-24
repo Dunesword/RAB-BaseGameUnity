@@ -66,19 +66,18 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Gets user input
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        //Applies force to the rigidbody using the input and speed
-        rb.AddForce(new Vector3(moveHorizontal, 0, moveVertical) * speed);
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.AddForce(movement * speed);
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
         //This event/function handles trigger events (collsion between a game object with a rigid body)
-
+   
         if (other.gameObject.tag == "PickUp")
         {
             other.gameObject.SetActive(false);
@@ -113,16 +112,15 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Net"))
         {
-
             if (Input.GetKey(KeyCode.Space))
             {
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
             }
 
-            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
-            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0.0f, rb.linearVelocity.z);
-            //rb.AddForce(0, 7, 0, ForceMode.Impulse);
-            //transform.position = new Vector3(11, 0, 11);
+            /*else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1, rb.linearVelocity.z);
+            }*/
 
             else
             {
@@ -136,7 +134,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 10)
+        if(count >= 10)
         {
             gameOver = true; // returns true value to signal game is over
             timeText.color = Color.green;  // changes timer's color
