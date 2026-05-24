@@ -66,11 +66,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Get user input
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * speed);
+
+        // Applies force to the rigidbody using the input and speed
+        rb.AddForce(new Vector3(moveHorizontal, 0, moveVertical) * speed);
     }
 
 
@@ -117,10 +119,10 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
             }
 
-            /*else if (Input.GetKeyDown(KeyCode.Space))
-            {
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1, rb.linearVelocity.z);
-            }*/
+            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
+            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0.0f, rb.linearVelocity.z);
+            //rb.AddForce(0, 7, 0, ForceMode.Impulse);
+            //transform.position = new Vector3(11, 0, 11);
 
             else
             {
