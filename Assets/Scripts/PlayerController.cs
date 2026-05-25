@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         winText.text = "";
         startingTime = Time.time;
         gameOver = false;
+        potions = new int[] {0, 0};
 
         audioSource = GetComponent<AudioSource>();  // access the audio source component of player
 
@@ -104,12 +105,16 @@ public class PlayerController : MonoBehaviour
         {
             potions[0]++;
             PlayPotionoAudio();
+            SetCountText();
+            Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Grow"))
         {
             potions[1]++;
             PlayPotionoAudio();
+            SetCountText();
+            Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Net"))
