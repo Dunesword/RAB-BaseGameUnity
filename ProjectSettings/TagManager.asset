@@ -12,6 +12,8 @@ TagManager:
   - Jump
   - Net
   - BreakBox
+  - Water
+  - LevelTwoEntrance
   layers:
   - Default
   - TransparentFX

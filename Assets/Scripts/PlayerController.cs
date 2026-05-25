@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public string min;
     public string sec;
     public GameObject gameOverPanel;
+    public Camera mainCamera;
 
     //These private variables are initialized in the Start
     private Rigidbody rb;
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
    
         if (other.gameObject.tag == "PickUp")
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
             count++;
             SetCountText();
 
@@ -104,9 +105,12 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeathZone"))
         {
-            Time.timeScale = 0;
             audioSource.clip = waterSFX;
             audioSource.Play();
+            Destroy(mainCamera.GetComponent<CameraController>());
+            Destroy(gameObject, 1f);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             gameOverPanel.SetActive(true);
         }
 
@@ -139,6 +143,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (other.gameObject.CompareTag("BreakBox") && (transform.localScale.x > 1.0f))
+        {
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("LevelTwoEntrance"))
+        {
+            SceneManager.LoadScene("WIN");
+        }
+
     }
 
 
@@ -165,24 +179,18 @@ public class PlayerController : MonoBehaviour
     {
 
         //Shrink
-        if (Input.GetKeyDown("q") && potions[0] > 0)
-        {
+        if (Input.GetKeyDown("q") && (potions[0] > 0) && (transform.localScale.x > 0.5f))
+        {           
             potions[0]--;
-            if (transform.localScale.x >= 0.5f)
-            {
-                transform.localScale *= 0.75f;     // decreases scale by 25%
-            }
-            SetCountText();
+            transform.localScale = new Vector3(transform.localScale.x - 0.5f, transform.localScale.y - 0.5f, transform.localScale.z - 0.5f);
+            SetCountText();            
         }
 
         //Grow
-        if (Input.GetKeyDown("e") && potions[1] > 0)
+        if (Input.GetKeyDown("e") && (potions[1] > 0) && (transform.localScale.x < 1.5f))
         {
             potions[1]--;
-            if (transform.localScale.x <= 2.0f)
-            {
-                transform.localScale *= 1.25f;    // increase scale by 25%
-            }
+            transform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f, transform.localScale.z + 0.5f);
             SetCountText();
         }
 

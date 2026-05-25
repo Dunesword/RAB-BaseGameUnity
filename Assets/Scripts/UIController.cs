@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
 	public void OnClickQuitButton()
     {
         print("Quit button was clicked");

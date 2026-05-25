@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour {
 	void LateUpdate ()
     {
 
-        if (Input.GetMouseButton(0)) // Left click held
+        if (Input.GetMouseButton(1)) // Right click held
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour {
             pitch = Mathf.Clamp(pitch, minYAngle, maxYAngle);
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
