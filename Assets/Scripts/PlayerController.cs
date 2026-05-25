@@ -120,11 +120,6 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
             }
 
-            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -1.2f, rb.linearVelocity.z);
-            //rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0.0f, rb.linearVelocity.z);
-            //rb.AddForce(0, 7, 0, ForceMode.Impulse);
-            //transform.position = new Vector3(11, 0, 11);
-
             else
             {
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y * -0.8f, rb.linearVelocity.z);
@@ -132,6 +127,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 
     //Updates UI
     void SetCountText()
@@ -154,6 +150,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerInput()
     {
+
         //Shrink
         if (Input.GetKeyDown("q") && potions[0] > 0)
         {
