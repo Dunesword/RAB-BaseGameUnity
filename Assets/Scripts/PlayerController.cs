@@ -179,7 +179,7 @@ public class PlayerController : MonoBehaviour
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, GetComponent<Collider>().bounds.extents.y + 0.1f))
         {
-            rb.AddForce(new Vector3(0.0f, 3.0f, 0.0f) * 3.0f, ForceMode.Impulse);
+            rb.AddForce(new Vector3(0.0f, 6.75f, 0.0f), ForceMode.Impulse);
         }
     }
 
