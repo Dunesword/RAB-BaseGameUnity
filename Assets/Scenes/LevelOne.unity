@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 70398514
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -21741,7 +21741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1865492690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22236,7 +22236,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2, y: 1.5, z: 1.2}
+  m_Size: {x: 1, y: 1.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1944534844
 MeshRenderer:
@@ -22305,7 +22305,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.6, y: 1.16, z: -3.72601}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -23998,7 +23998,7 @@ MonoBehaviour:
   startingTime: 0
   min: 
   sec: 
-  gameOverPanel: {fileID: 1434239024}
+  gameOverPanel: {fileID: 1244588477}
   coinSFX: {fileID: 8300000, guid: ab1859cbda5759844b7c967242766700, type: 3}
   potionSFX: {fileID: 0}
   waterSFX: {fileID: 8300000, guid: 9e3dc43f34321894b868e6594a0faf17, type: 3}

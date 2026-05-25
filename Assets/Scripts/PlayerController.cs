@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
             audioSource.clip = waterSFX;
             audioSource.Play();
             gameOverPanel.SetActive(true);
-            gameOverPanelAnimator.SetTrigger("Dead"); // Playing fade-in
         }
 
         if (other.gameObject.CompareTag("Shrink"))
