@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Jump
   - Net
+  - BreakBox
   layers:
   - Default
   - TransparentFX
