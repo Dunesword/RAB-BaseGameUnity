@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     //These public variables are initialized in the Inspector
     public float speed;
+    public float maxSpeed = 8.0f;
     public TMP_Text countText;
     public TMP_Text winText;
     public TMP_Text timeText;  //  variable to display the timer text in Unity
@@ -37,19 +38,21 @@ public class PlayerController : MonoBehaviour
     public Animator doorAnimator;
     public Animator gameOverPanelAnimator; // fade-in animation
 
+    //For movement based on camera
+    Transform cam;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
-        SetCountText();
         winText.text = "";
         startingTime = Time.time;
         gameOver = false;
         potions = new int[] {0, 0};
-
+        cam = Camera.main.transform;
         audioSource = GetComponent<AudioSource>();  // access the audio source component of player
-
         Time.timeScale = 1;
+        SetCountText();
 
     }
     private void Update()
@@ -67,13 +70,19 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Get user input
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 camPosition = new Vector3(cam.position.x, transform.position.y, cam.position.z);
+        Vector3 direction = (transform.position - camPosition).normalized;
 
+        Vector3 forwardMovement = direction * Input.GetAxis("Vertical");
+        Vector3 horizontalMovement = cam.right * Input.GetAxis("Horizontal");
 
-        // Applies force to the rigidbody using the input and speed
-        rb.AddForce(new Vector3(moveHorizontal, 0, moveVertical) * speed);
+        Vector3 movement = Vector3.ClampMagnitude(forwardMovement + horizontalMovement, 1);
+
+        if (rb.linearVelocity.magnitude < maxSpeed)
+        {
+            rb.AddForce(movement * speed, ForceMode.Force);
+        }
+        
     }
 
 

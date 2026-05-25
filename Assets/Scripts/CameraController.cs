@@ -30,9 +30,17 @@ public class CameraController : MonoBehaviour {
 
         if (Input.GetMouseButton(0)) // Left click held
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             yaw += Input.GetAxis("Mouse X") * sensitivity;
             pitch -= Input.GetAxis("Mouse Y") * sensitivity;
             pitch = Mathf.Clamp(pitch, minYAngle, maxYAngle);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);

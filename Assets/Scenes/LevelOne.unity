@@ -20229,6 +20229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  maxSpeed: 8
   countText: {fileID: 929672227}
   winText: {fileID: 60432072}
   timeText: {fileID: 1081547406}
@@ -23709,6 +23710,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1994447356}
+  distance: 10
+  sensitivity: 3
+  minYAngle: -30
+  maxYAngle: 70
 --- !u!114 &2132230651
 MonoBehaviour:
   m_ObjectHideFlags: 0
