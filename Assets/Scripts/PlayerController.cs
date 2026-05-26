@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip coinSFX;
     public AudioClip potionSFX;
     public AudioClip waterSFX;
+    public AudioClip potionUseSFX;
+    public AudioClip boxBreakSFX;
     private AudioSource audioSource;
 
     //Items
@@ -145,6 +147,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("BreakBox") && (transform.localScale.x > 1.0f))
         {
+            audioSource.PlayOneShot(boxBreakSFX, 0.1f);
             Destroy(other.gameObject);
         }
 
@@ -183,6 +186,7 @@ public class PlayerController : MonoBehaviour
         {           
             potions[0]--;
             transform.localScale = new Vector3(transform.localScale.x - 0.5f, transform.localScale.y - 0.5f, transform.localScale.z - 0.5f);
+            PlayPotionoUseAudio();
             SetCountText();            
         }
 
@@ -191,6 +195,7 @@ public class PlayerController : MonoBehaviour
         {
             potions[1]--;
             transform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f, transform.localScale.z + 0.5f);
+            PlayPotionoUseAudio();
             SetCountText();
         }
 
@@ -204,6 +209,12 @@ public class PlayerController : MonoBehaviour
     void PlayPotionoAudio()
     {
         audioSource.clip = potionSFX;
+        audioSource.Play();
+    }
+
+    void PlayPotionoUseAudio()
+    {
+        audioSource.clip = potionUseSFX;
         audioSource.Play();
     }
 }
