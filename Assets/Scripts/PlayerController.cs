@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
             audioSource.clip = waterSFX;
             audioSource.Play();
             Destroy(mainCamera.GetComponent<CameraController>());
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 2.6f);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             gameOverPanel.SetActive(true);
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("BreakBox") && (transform.localScale.x > 1.0f))
+        if (other.gameObject.CompareTag("BreakBox") && (transform.localScale.x > 1.2f))
         {
             audioSource.PlayOneShot(boxBreakSFX, 0.1f);
             Destroy(other.gameObject);
@@ -182,19 +182,19 @@ public class PlayerController : MonoBehaviour
     {
 
         //Shrink
-        if (Input.GetKeyDown("q") && (potions[0] > 0) && (transform.localScale.x > 0.5f))
+        if (Input.GetKeyDown("q") && (potions[0] > 0) && (transform.localScale.x > 0.6f))
         {           
             potions[0]--;
-            transform.localScale = new Vector3(transform.localScale.x - 0.5f, transform.localScale.y - 0.5f, transform.localScale.z - 0.5f);
+            transform.localScale = new Vector3(transform.localScale.x - 0.7f, transform.localScale.y - 0.7f, transform.localScale.z - 0.7f);
             PlayPotionoUseAudio();
             SetCountText();            
         }
 
         //Grow
-        if (Input.GetKeyDown("e") && (potions[1] > 0) && (transform.localScale.x < 1.5f))
+        if (Input.GetKeyDown("e") && (potions[1] > 0) && (transform.localScale.x < 1.8f))
         {
             potions[1]--;
-            transform.localScale = new Vector3(transform.localScale.x + 0.5f, transform.localScale.y + 0.5f, transform.localScale.z + 0.5f);
+            transform.localScale = new Vector3(transform.localScale.x + 0.7f, transform.localScale.y + 0.7f, transform.localScale.z + 0.7f);
             PlayPotionoUseAudio();
             SetCountText();
         }
