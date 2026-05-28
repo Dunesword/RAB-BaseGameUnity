@@ -29798,15 +29798,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c86ac283fc408438199c4a8cdf4e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1994447356}
-  distance: 10
+  player: {fileID: 1994447362}
+  targetOffset: {x: 0, y: 1.5, z: 0}
+  distance: 8
   sensitivity: 3
   minYAngle: -30
   maxYAngle: 70
   collisionLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  collisionPadding: 0.2
+  cameraRadius: 0.3
+  collisionOffset: 0.2
 --- !u!114 &2132230651
 MonoBehaviour:
   m_ObjectHideFlags: 0
