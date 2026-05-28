@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeathZone"))
         {
+            rb.linearVelocity = new Vector3(0f, 0f, 0f);
             audioSource.clip = waterSFX;
             audioSource.Play();
             Destroy(mainCamera.GetComponent<CameraController>());
@@ -185,7 +187,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("q") && (potions[0] > 0) && (transform.localScale.x > 0.6f))
         {           
             potions[0]--;
-            transform.localScale = new Vector3(transform.localScale.x - 0.7f, transform.localScale.y - 0.7f, transform.localScale.z - 0.7f);
+            transform.localScale = new Vector3((float)Math.Round(transform.localScale.x - 0.7f, 1), (float)Math.Round(transform.localScale.y - 0.7f, 1), (float)Math.Round(transform.localScale.z - 0.7f, 1));
             PlayPotionoUseAudio();
             SetCountText();            
         }
@@ -194,7 +196,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("e") && (potions[1] > 0) && (transform.localScale.x < 1.8f))
         {
             potions[1]--;
-            transform.localScale = new Vector3(transform.localScale.x + 0.7f, transform.localScale.y + 0.7f, transform.localScale.z + 0.7f);
+            transform.localScale = new Vector3((float)Math.Round(transform.localScale.x + 0.7f, 1), (float)Math.Round(transform.localScale.y + 0.7f, 1), (float)Math.Round(transform.localScale.z + 0.7f, 1));
             PlayPotionoUseAudio();
             SetCountText();
         }

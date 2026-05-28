@@ -29803,6 +29803,10 @@ MonoBehaviour:
   sensitivity: 3
   minYAngle: -30
   maxYAngle: 70
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  collisionPadding: 0.2
 --- !u!114 &2132230651
 MonoBehaviour:
   m_ObjectHideFlags: 0

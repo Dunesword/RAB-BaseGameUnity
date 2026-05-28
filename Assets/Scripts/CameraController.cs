@@ -16,6 +16,9 @@ public class CameraController : MonoBehaviour {
     private float yaw;
     private float pitch;
 
+    public LayerMask collisionLayers;
+    public float collisionPadding = 0.2f;
+
 
     void Start ()
     {
@@ -45,10 +48,25 @@ public class CameraController : MonoBehaviour {
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
 
+        Vector3 targetPosition = player.transform.position;
+
         offset = rotation * new Vector3(0f, 0f, -distance);
 
-        transform.position = player.transform.position + offset;
-        transform.LookAt(player.transform.position);
+        Vector3 desiredCameraPosition = targetPosition + offset;
+        Vector3 direction = desiredCameraPosition - targetPosition;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(targetPosition, direction.normalized, out hit, distance, collisionLayers))
+        {
+            transform.position = hit.point - direction.normalized * collisionPadding;
+        }
+        else
+        {
+            transform.position = desiredCameraPosition;
+        }
+
+        transform.LookAt(targetPosition);
 
     }
 }
