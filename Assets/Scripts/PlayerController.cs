@@ -170,6 +170,16 @@ public class PlayerController : MonoBehaviour
             gameOver = true; // returns true value to signal game is over
             timeText.color = Color.green;  // changes timer's color
             doorAnimator.SetTrigger("OpenDoor");
+
+            PlayerPrefs.SetFloat("LatestTimeLevel" + SceneManager.GetActiveScene().buildIndex, Time.time - startingTime);
+
+            if (PlayerPrefs.GetFloat("LatestTimeLevel" + SceneManager.GetActiveScene().buildIndex) < PlayerPrefs.GetFloat("BestTimeLevel" + SceneManager.GetActiveScene().buildIndex, float.MaxValue))
+            {
+                PlayerPrefs.SetFloat("BestTimeLevel" + SceneManager.GetActiveScene().buildIndex, PlayerPrefs.GetFloat("LatestTimeLevel" + SceneManager.GetActiveScene().buildIndex));
+            }
+
+            PlayerPrefs.Save();
+            
             //winText.text = "You win!";
             //Time.timeScale = 0;
         }
