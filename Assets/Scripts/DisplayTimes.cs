@@ -12,7 +12,10 @@ public class DisplayTimes : MonoBehaviour
     {
         for (int i = 0; i < levelTimes.Length; i++)
         {
-            
+            string min = ((int)PlayerPrefs.GetFloat("LatestTimeLevel" + i) / 60).ToString();     // calculates minutes
+            string sec = (PlayerPrefs.GetFloat("LatestTimeLevel" + i) % 60).ToString("f0");      // calculates seconds
+
+            levelTimes[i].text = levelTimes[i].text.Substring(0, levelTimes[i].text.IndexOf(':') + 2) + min + ":" + sec;
         }
     }
 

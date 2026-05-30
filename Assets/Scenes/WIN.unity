@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level One:'
+  m_text: 'Level One: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46f911b7318bace4c82c0197633943e4, type: 2}
   m_sharedMaterial: {fileID: 105661706475929687, guid: 46f911b7318bace4c82c0197633943e4,
@@ -1269,7 +1269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1114503782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,7 +1282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa5b3248803a434c9247d36cb7104a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelTimes: []
+  levelTimes:
+  - {fileID: 4606938}
   bestLevelTimes: []
 --- !u!4 &1114503783
 Transform:
@@ -1356,7 +1357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level Two:'
+  m_text: 'Level Two: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46f911b7318bace4c82c0197633943e4, type: 2}
   m_sharedMaterial: {fileID: 105661706475929687, guid: 46f911b7318bace4c82c0197633943e4,
