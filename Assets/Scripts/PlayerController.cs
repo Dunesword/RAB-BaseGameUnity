@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         min = ((int)timer / 60).ToString();     // calculates minutes
         sec = (timer % 60).ToString("f0");      // calculates seconds
 
-        timeText.text = "Elapsed Time: " + min + ":" + sec;     // update UI time text
+        timeText.text = min + ":" + sec;     // update UI time text
     }
 
     void FixedUpdate()
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
     //Updates UI
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
+        countText.text = count.ToString() + " / 10";
         if(count >= 10)
         {
             gameOver = true; // returns true value to signal game is over
