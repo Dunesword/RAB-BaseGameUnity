@@ -810,7 +810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level Two:'
+  m_text: 'Level Two: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46f911b7318bace4c82c0197633943e4, type: 2}
   m_sharedMaterial: {fileID: 105661706475929687, guid: 46f911b7318bace4c82c0197633943e4,
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level One:'
+  m_text: 'Level One: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46f911b7318bace4c82c0197633943e4, type: 2}
   m_sharedMaterial: {fileID: 105661706475929687, guid: 46f911b7318bace4c82c0197633943e4,
@@ -1284,7 +1284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   levelTimes:
   - {fileID: 4606938}
-  bestLevelTimes: []
+  bestLevelTimes:
+  - {fileID: 1077533490}
 --- !u!4 &1114503783
 Transform:
   m_ObjectHideFlags: 0
