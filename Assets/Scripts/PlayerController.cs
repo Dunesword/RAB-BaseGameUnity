@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
     //For movement based on camera
     Transform cam;
 
+    //crush related variables
+    private float oppositeDotThreshold = -0.75f;
+    private readonly List<Collision> activeCollisions = new();
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -86,7 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(movement * speed, ForceMode.Force);
         }
-        
+
     }
 
 
@@ -108,14 +113,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeathZone"))
         {
-            rb.linearVelocity = new Vector3(0f, 0f, 0f);
             audioSource.clip = waterSFX;
-            audioSource.Play();
-            Destroy(mainCamera.GetComponent<CameraController>());
+            Death();
             Destroy(gameObject, 2.6f);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            gameOverPanel.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("Shrink"))
@@ -160,6 +160,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void Death()
+    {
+        rb.linearVelocity = new Vector3(0f, 0f, 0f);
+        audioSource.Play();
+        Destroy(mainCamera.GetComponent<CameraController>());
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        gameOverPanel.SetActive(true);
+    }
 
     //Updates UI
     void SetCountText()
@@ -179,9 +188,6 @@ public class PlayerController : MonoBehaviour
             }
 
             PlayerPrefs.Save();
-            
-            //winText.text = "You win!";
-            //Time.timeScale = 0;
         }
 
         for (int i = 0; i < potions.Length; i++)
