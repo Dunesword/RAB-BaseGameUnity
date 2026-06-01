@@ -13,9 +13,9 @@ TagManager:
   - Net
   - BreakBox
   - Water
-  - LevelTwoEntrance
   - Box
   - Wall
+  - NextLevelEntrance
   layers:
   - Default
   - TransparentFX

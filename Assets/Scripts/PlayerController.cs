@@ -34,9 +34,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip boxBreakSFX;
     private AudioSource audioSource;
 
-    //Items
+    //Items and UI arrays
     public int[] potions;
     public TMP_Text[] potionsText;
+    public GameObject[] coinBag;
+    public GameObject closedCoinBag;
+    public GameObject openBagBG;
 
     //Animators
     public Animator doorAnimator;
@@ -72,7 +75,7 @@ public class PlayerController : MonoBehaviour
             return;
         float timer = Time.time - startingTime;     // local variable to updated time
         min = ((int)timer / 60).ToString();     // calculates minutes
-        sec = (timer % 60).ToString("f0");      // calculates seconds
+        sec = (timer % 60).ToString("00");      // calculates seconds
 
         timeText.text = min + ":" + sec;     // update UI time text
     }
@@ -103,6 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             count++;
+            coinBag[count - 1].SetActive(true);
             SetCountText();
 
             //PLAY SOUND EFFECT
@@ -153,9 +157,9 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("LevelTwoEntrance"))
+        if (other.gameObject.CompareTag("NextLevelEntrance"))
         {
-            SceneManager.LoadScene("WIN");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
@@ -176,6 +180,7 @@ public class PlayerController : MonoBehaviour
         countText.text = count.ToString() + " / 10";
         if(count >= 10)
         {
+            Invoke(nameof(CloseCoinBag), 1f);
             gameOver = true; // returns true value to signal game is over
             timeText.color = Color.green;  // changes timer's color
             doorAnimator.SetTrigger("OpenDoor");
@@ -199,17 +204,8 @@ public class PlayerController : MonoBehaviour
     void PlayerInput()
     {
 
-        //Shrink
-        if (Input.GetKeyDown("q") && (potions[0] > 0) && (transform.localScale.x > 0.6f))
-        {           
-            potions[0]--;
-            transform.localScale = new Vector3((float)Math.Round(transform.localScale.x - 0.7f, 1), (float)Math.Round(transform.localScale.y - 0.7f, 1), (float)Math.Round(transform.localScale.z - 0.7f, 1));
-            PlayPotionoUseAudio();
-            SetCountText();            
-        }
-
         //Grow
-        if (Input.GetKeyDown("e") && (potions[1] > 0) && (transform.localScale.x < 1.8f))
+        if (Input.GetKeyDown("q") && (potions[1] > 0) && (transform.localScale.x < 1.8f))
         {
             potions[1]--;
             transform.localScale = new Vector3((float)Math.Round(transform.localScale.x + 0.7f, 1), (float)Math.Round(transform.localScale.y + 0.7f, 1), (float)Math.Round(transform.localScale.z + 0.7f, 1));
@@ -217,6 +213,15 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
+        //Shrink
+        if (Input.GetKeyDown("e") && (potions[0] > 0) && (transform.localScale.x > 0.6f))
+        {           
+            potions[0]--;
+            transform.localScale = new Vector3((float)Math.Round(transform.localScale.x - 0.7f, 1), (float)Math.Round(transform.localScale.y - 0.7f, 1), (float)Math.Round(transform.localScale.z - 0.7f, 1));
+            PlayPotionoUseAudio();
+            SetCountText();            
+        }
+        
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, GetComponent<Collider>().bounds.extents.y + 0.1f))
         {
@@ -234,5 +239,16 @@ public class PlayerController : MonoBehaviour
     {
         audioSource.clip = potionUseSFX;
         audioSource.Play();
+    }
+
+    void CloseCoinBag()
+    {
+        foreach(GameObject coin in coinBag)
+        {
+            coin.SetActive(false);
+        }
+
+        openBagBG.SetActive(false);
+        closedCoinBag.SetActive(true);
     }
 }

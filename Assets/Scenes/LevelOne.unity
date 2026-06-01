@@ -11901,7 +11901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &561377812
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13718,7 +13718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &896386985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13810,8 +13810,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -313.75452, y: -6.9413834}
-  m_SizeDelta: {x: 137.4719, y: 93.498}
+  m_AnchoredPosition: {x: -232.40173, y: -6.9413834}
+  m_SizeDelta: {x: 300.1774, y: 93.498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929672227
 MonoBehaviour:
@@ -16192,7 +16192,7 @@ GameObject:
   - component: {fileID: 1202281382}
   m_Layer: 0
   m_Name: LevelTwoEntrance
-  m_TagString: LevelTwoEntrance
+  m_TagString: NextLevelEntrance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16916,7 +16916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1233151857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18257,7 +18257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1370250282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21758,7 +21758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1538214811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25473,7 +25473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1697899119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25623,7 +25623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1714259091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25698,7 +25698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1723434035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25773,7 +25773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1750206018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27597,6 +27597,19 @@ MonoBehaviour:
   potionsText:
   - {fileID: 2061479475}
   - {fileID: 1956140087}
+  coinBag:
+  - {fileID: 1723434034}
+  - {fileID: 1750206017}
+  - {fileID: 1233151856}
+  - {fileID: 2063479058}
+  - {fileID: 561377811}
+  - {fileID: 1538214810}
+  - {fileID: 1370250281}
+  - {fileID: 896386984}
+  - {fileID: 1697899118}
+  - {fileID: 1714259090}
+  closedCoinBag: {fileID: 508677935}
+  openBagBG: {fileID: 992977280}
   doorAnimator: {fileID: 1900543523}
   gameOverPanelAnimator: {fileID: 1244588481}
 --- !u!54 &1994447358
@@ -30050,7 +30063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2063479059
 RectTransform:
   m_ObjectHideFlags: 0

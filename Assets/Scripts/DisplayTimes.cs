@@ -21,7 +21,7 @@ public class DisplayTimes : MonoBehaviour
     {
 
         string min = ((int)time / 60).ToString();     // calculates minutes
-        string sec = (time % 60).ToString("f0");
+        string sec = (time % 60).ToString("00");
 
         return min + ":" + sec;
     }
