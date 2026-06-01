@@ -14,6 +14,8 @@ TagManager:
   - BreakBox
   - Water
   - LevelTwoEntrance
+  - Box
+  - Wall
   layers:
   - Default
   - TransparentFX
