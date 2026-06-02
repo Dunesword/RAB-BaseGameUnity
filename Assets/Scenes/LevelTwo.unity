@@ -2553,12 +2553,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204656291}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.35836798, z: 0, w: 0.93358046}
-  m_LocalPosition: {x: -1.9466305, y: -1.5, z: 30.918024}
+  m_LocalRotation: {x: -0, y: -0.35836798, z: -0, w: 0.93358046}
+  m_LocalPosition: {x: -1.9476305, y: 1.0900002, z: 15.488024}
   m_LocalScale: {x: 4, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1489940380}
   m_LocalEulerAnglesHint: {x: 0, y: -42, z: 0}
 --- !u!1001 &205506608
 PrefabInstance:
@@ -8169,7 +8169,7 @@ PrefabInstance:
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8200002
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
@@ -17883,7 +17883,7 @@ Transform:
   m_GameObject: {fileID: 1057611847}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: -2.5900002, z: 15.43}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17897,7 +17897,7 @@ Transform:
   - {fileID: 1463503883}
   - {fileID: 1423924114}
   - {fileID: 250397057}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1489940380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1057611849
 Animator:
@@ -24709,6 +24709,8 @@ Transform:
   - {fileID: 468939814}
   - {fileID: 1802342840}
   - {fileID: 635696604}
+  - {fileID: 1057611848}
+  - {fileID: 204656295}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1489940381
@@ -35194,7 +35196,7 @@ PrefabInstance:
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8200002
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
@@ -38010,11 +38012,9 @@ SceneRoots:
   - {fileID: 1629091956}
   - {fileID: 484803460}
   - {fileID: 1675053507}
-  - {fileID: 1057611848}
   - {fileID: 1489940380}
   - {fileID: 464582108}
   - {fileID: 896115404}
   - {fileID: 1129850799}
   - {fileID: 177451477}
   - {fileID: 370170827}
-  - {fileID: 204656295}
