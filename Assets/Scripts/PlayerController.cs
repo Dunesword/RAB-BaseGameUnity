@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public TMP_Text countText;
     public TMP_Text winText;
     public TMP_Text timeText;  //  variable to display the timer text in Unity
+    public TMP_Text deathText;
     public float startingTime;  // variable to hold the game's starting time
     public string min;
     public string sec;
@@ -117,7 +118,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeathZone"))
         {
+            deathText.text = "You drowned";
             audioSource.clip = waterSFX;
+            audioSource.Play();
             Death();
             Destroy(gameObject, 2.6f);
         }
@@ -167,7 +170,6 @@ public class PlayerController : MonoBehaviour
     public void Death()
     {
         rb.linearVelocity = new Vector3(0f, 0f, 0f);
-        audioSource.Play();
         Destroy(mainCamera.GetComponent<CameraController>());
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

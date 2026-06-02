@@ -36,6 +36,7 @@ public class Crushed : MonoBehaviour
 
         if (crusherRb == null)
         {
+            pc.deathText.text = "You got crushed";
             pc.Death();
             Destroy(gameObject);
             return;
@@ -46,6 +47,7 @@ public class Crushed : MonoBehaviour
 
         if (speedTowardPlayer > minCrushSpeed)
         {
+            pc.deathText.text = "You got crushed";
             pc.Death();
             Destroy(gameObject);
         }

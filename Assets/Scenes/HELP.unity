@@ -759,10 +759,10 @@ MonoBehaviour:
     Jump:
     Space (Hold to bounce higher on Nets)
 
-    Shrink Potion (Blue): Q
+    Grow Potion (Green): Q
 
-    Grow
-    Potion (Green): E'
+    Shrink
+    Potion (Blue): E'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46f911b7318bace4c82c0197633943e4, type: 2}
   m_sharedMaterial: {fileID: 105661706475929687, guid: 46f911b7318bace4c82c0197633943e4,
