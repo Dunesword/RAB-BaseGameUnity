@@ -16,6 +16,8 @@ TagManager:
   - Box
   - Wall
   - NextLevelEntrance
+  - LevelTwoEntrance
+  - DropZone
   layers:
   - Default
   - TransparentFX

@@ -37,4 +37,14 @@ public class UIController : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void OnClickLevelOneReplayButton()
+    {
+        SceneManager.LoadScene("LevelOne");
+    }
+
+    public void OnClickLevelTwoReplayButton()
+    {
+        SceneManager.LoadScene("LevelTwo");
+    }
+
 }
