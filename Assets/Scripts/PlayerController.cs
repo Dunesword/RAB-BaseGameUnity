@@ -49,8 +49,8 @@ public class PlayerController : MonoBehaviour
     Transform cam;
 
     //crush related variables
-    private float oppositeDotThreshold = -0.75f;
-    private readonly List<Collision> activeCollisions = new();
+    //private float oppositeDotThreshold = -0.75f;
+    //private readonly List<Collision> activeCollisions = new();
 
 
     void Start()
