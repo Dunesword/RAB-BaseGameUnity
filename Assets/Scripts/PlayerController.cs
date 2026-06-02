@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("NextLevelEntrance"))
+        if (other.gameObject.CompareTag("NextLevelEntrance") && count >= 10)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
