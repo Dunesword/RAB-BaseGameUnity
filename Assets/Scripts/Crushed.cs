@@ -14,19 +14,32 @@ public class Crushed : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Box"))
+        {
+            crusherRb = other.gameObject.GetComponent<Rigidbody>();
             touchingCrusher = true;
+        }
+            
 
         if (other.CompareTag("Wall"))
+        {
             touchingWall = true;
+        }
+            
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Box"))
+        {
             touchingCrusher = false;
+        }
+            
 
         if (other.CompareTag("Wall"))
+        {
             touchingWall = false;
+        }
+            
     }
 
     private void FixedUpdate()
@@ -34,13 +47,7 @@ public class Crushed : MonoBehaviour
         if (!touchingCrusher || !touchingWall)
             return;
 
-        if (crusherRb == null)
-        {
-            pc.deathText.text = "You got crushed";
-            pc.Death();
-            Destroy(gameObject);
-            return;
-        }
+        
 
         Vector3 directionToPlayer = (transform.position - crusherRb.position).normalized;
         float speedTowardPlayer = Vector3.Dot(crusherRb.linearVelocity, directionToPlayer);
@@ -53,3 +60,12 @@ public class Crushed : MonoBehaviour
         }
     }
 }
+
+
+/*if (crusherRb == null)
+        {
+            pc.deathText.text = "You got crushed";
+            pc.Death();
+            Destroy(gameObject);
+            return;
+        }*/

@@ -185,7 +185,12 @@ public class PlayerController : MonoBehaviour
             Invoke(nameof(CloseCoinBag), 1f);
             gameOver = true; // returns true value to signal game is over
             timeText.color = Color.green;  // changes timer's color
-            doorAnimator.SetTrigger("OpenDoor");
+            
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                doorAnimator.SetTrigger("OpenDoor");
+            }
+                
 
             PlayerPrefs.SetFloat("LatestTimeLevel" + SceneManager.GetActiveScene().buildIndex, Time.time - startingTime);
 
