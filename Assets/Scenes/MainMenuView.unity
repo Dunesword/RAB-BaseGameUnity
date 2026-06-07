@@ -15696,7 +15696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 553.04, y: 235}
+  m_AnchoredPosition: {x: 584, y: -289}
   m_SizeDelta: {x: -1420.4905, y: -759.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070423297
@@ -20416,7 +20416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -659, y: 180}
+  m_AnchoredPosition: {x: -1274, y: 176}
   m_SizeDelta: {x: 371.8325, y: 102.3578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1445823953
@@ -20463,7 +20463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 484803459}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OnClickQuitButton
         m_Mode: 1
@@ -20883,7 +20883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 984, y: 407}
+  m_AnchoredPosition: {x: 369, y: 403}
   m_SizeDelta: {x: 421.59, y: 161.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1474192432
@@ -20930,7 +20930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 484803459}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OnClickStartButton
         m_Mode: 1
@@ -21412,7 +21412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 592, y: 407}
+  m_AnchoredPosition: {x: -23, y: 403}
   m_SizeDelta: {x: 421.58997, y: 161.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492280588
@@ -21459,7 +21459,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 484803459}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OnClickControlsButton
         m_Mode: 1
@@ -24554,9 +24554,9 @@ Transform:
   m_GameObject: {fileID: 1675053503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003, y: -3.99, z: 65.700005}
-  m_LocalScale: {x: 820.6, y: 0.2, z: 632.3}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -242, y: -3.99, z: 6}
+  m_LocalScale: {x: 1757.5, y: 0.27755842, z: 1690.3169}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32737,13 +32737,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132230646}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.017328912, y: -0.11737536, z: -0.0033443887, w: 0.9929308}
+  m_LocalRotation: {x: 0.038926058, y: -0.5678203, z: 0.020396426, w: 0.8219786}
   m_LocalPosition: {x: 74.90789, y: 9.163034, z: -86.375084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: -69.3, z: -0.614}
 --- !u!114 &2132230651
 MonoBehaviour:
   m_ObjectHideFlags: 0
