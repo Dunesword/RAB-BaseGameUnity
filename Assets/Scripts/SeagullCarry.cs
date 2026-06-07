@@ -31,6 +31,14 @@ public class SeagullCarry : MonoBehaviour
             carriedPlayer.transform.SetParent(null);
           
             playerRb.isKinematic = false;
+
+            Invoke(nameof(RegrabTimer), 2f);
         }
+    }
+
+    private void RegrabTimer()
+    {
+        carriedPlayer = null;
+        playerRb = null;
     }
 }
