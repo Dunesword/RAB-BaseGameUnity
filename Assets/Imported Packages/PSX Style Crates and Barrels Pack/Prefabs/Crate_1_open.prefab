@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 7711415572315736843}
   - component: {fileID: 3318823947605330215}
   - component: {fileID: 3261563484300878789}
-  - component: {fileID: 3639965110449853096}
   - component: {fileID: 3638854047916089233}
   m_Layer: 0
   m_Name: Crate_1_open
-  m_TagString: Box
+  m_TagString: Crusher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,30 +111,9 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4468235067886264170, guid: 5612bfa16cecbf64eb3725dd1813215e, type: 3}
---- !u!65 &3639965110449853096
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8178363776941137566}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5526018, y: 0.5526018, z: 0.5526019}
-  m_Center: {x: 0.00000011920929, y: 0.27630088, z: 0.02763015}
 --- !u!54 &3638854047916089233
 Rigidbody:
   m_ObjectHideFlags: 0

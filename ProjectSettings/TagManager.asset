@@ -18,6 +18,7 @@ TagManager:
   - NextLevelEntrance
   - LevelTwoEntrance
   - DropZone
+  - Crusher
   layers:
   - Default
   - TransparentFX

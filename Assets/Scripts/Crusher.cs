@@ -4,14 +4,9 @@ using System.Collections.Generic;
 public class Crusher : MonoBehaviour
 {
 
+    public PlayerController pc;
+
     private List<ContactPoint> contactPoints = new List<ContactPoint>();
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -41,7 +36,10 @@ public class Crusher : MonoBehaviour
     private void RemoveContacts(Collision collision)
     {
         contactPoints.RemoveAll(contact =>
-                contact.otherCollider == collision.gameObject);
+            contact.otherCollider == collision.collider);
+
+        /*contactPoints.RemoveAll(contact =>
+                contact.otherCollider == collision.gameObject);*/
     }
 
     private void UpdateContacts(Collision collision)
@@ -54,13 +52,12 @@ public class Crusher : MonoBehaviour
 
     void FixedUpdate()
     {
-        CrushCheck();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (CrushCheck())
+        {
+            pc.deathText.text = "You got crushed";
+            pc.Death();
+            Destroy(gameObject);
+        }
     }
 
     bool CrushCheck()
