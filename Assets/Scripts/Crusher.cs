@@ -52,9 +52,40 @@ public class Crusher : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        CrushCheck();
+    }
+
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    bool CrushCheck()
+    {
+        Vector3 playerCenter = transform.position;
+
+        for (int i = 0; i < contactPoints.Count; i++)
+        {
+            Vector3 dirA = (contactPoints[i].point - playerCenter).normalized;
+
+            for (int j = i + 1; j < contactPoints.Count; j++)
+            {
+                Vector3 dirB = (contactPoints[j].point - playerCenter).normalized;
+
+                float dot = Vector3.Dot(dirA, dirB);
+
+                // -1 means perfectly opposite
+                //  0 means perpendicular
+                //  1 means same direction
+                if (dot < -0.75f)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
