@@ -15,7 +15,7 @@ public class Crusher : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Crusher"))
+        if (collision.gameObject.CompareTag("Crusher"))
         {
             UpdateContacts(collision);
         }      
@@ -25,9 +25,7 @@ public class Crusher : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Crusher"))
         {
-            contactPoints.RemoveAll(contact =>
-                contact.otherObject == collision.gameObject);
-
+            RemoveContacts(collision);
             UpdateContacts(collision);
         }
     }
@@ -36,9 +34,14 @@ public class Crusher : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Crusher"))
         {
-            contactPoints.RemoveAll(contact =>
-            contact.otherObject == collision.gameObject);
+            RemoveContacts(collision);
         }        
+    }
+
+    private void RemoveContacts(Collision collision)
+    {
+        contactPoints.RemoveAll(contact =>
+                contact.otherCollider == collision.gameObject);
     }
 
     private void UpdateContacts(Collision collision)
