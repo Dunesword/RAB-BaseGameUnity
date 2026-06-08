@@ -27,7 +27,7 @@ public class DevCheats : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown(KeyCode.Alpha2))
         {
             SceneManager.LoadScene(2);
         }
