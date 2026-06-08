@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class DevCheats : MonoBehaviour
 {
+
+    public PlayerController pc;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,9 +42,19 @@ public class DevCheats : MonoBehaviour
             SceneManager.LoadScene(4);
         }
 
-        if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown("c") && pc != null)
         {
-            SceneManager.LoadScene(5);
+            pc.CoinCollected();
+        }
+
+        if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown("z") && pc != null)
+        {
+            pc.GrowPotionCollected();
+        }
+
+        if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown("x") && pc != null)
+        {
+            pc.ShrinkPotionCollected();
         }
     }
 }

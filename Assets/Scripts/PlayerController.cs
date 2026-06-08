@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
 
     //These private variables are initialized in the Start
     private Rigidbody rb;
-    private int count;
     private bool gameOver; //  bool to define game state on or off.
 
     // Audio
@@ -41,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] coinBag;
     public GameObject closedCoinBag;
     public GameObject openBagBG;
+    public int count;
 
     //Animators
     public Animator doorAnimator;
@@ -106,14 +106,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "PickUp")
         {
             Destroy(other.gameObject);
-            count++;
-            coinBag[count - 1].SetActive(true);
-            SetCountText();
-
-            //PLAY SOUND EFFECT
-            audioSource.clip = coinSFX;
-            audioSource.Play();
-
+            CoinCollected();
         }
 
         if (other.gameObject.CompareTag("DeathZone"))
@@ -127,17 +120,13 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Shrink"))
         {
-            potions[0]++;
-            PlayPotionoAudio();
-            SetCountText();
+            ShrinkPotionCollected();
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Grow"))
         {
-            potions[1]++;
-            PlayPotionoAudio();
-            SetCountText();
+            GrowPotionCollected();
             Destroy(other.gameObject);
         }
 
@@ -165,6 +154,31 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
+    }
+
+    public void CoinCollected()
+    {       
+        count++;
+        coinBag[count - 1].SetActive(true);
+        SetCountText();
+
+        //PLAY SOUND EFFECT
+        audioSource.clip = coinSFX;
+        audioSource.Play();
+    }
+
+    public void ShrinkPotionCollected()
+    {
+        potions[0]++;
+        PlayPotionoAudio();
+        SetCountText();
+    }
+
+    public void GrowPotionCollected()
+    {
+        potions[1]++;
+        PlayPotionoAudio();
+        SetCountText();
     }
 
     public void Death()
@@ -210,7 +224,6 @@ public class PlayerController : MonoBehaviour
 
     void PlayerInput()
     {
-
         //Grow
         if (Input.GetKeyDown("q") && (potions[1] > 0) && (transform.localScale.x < 1.8f))
         {
@@ -222,13 +235,13 @@ public class PlayerController : MonoBehaviour
 
         //Shrink
         if (Input.GetKeyDown("e") && (potions[0] > 0) && (transform.localScale.x > 0.6f))
-        {           
+        {
             potions[0]--;
             transform.localScale = new Vector3((float)Math.Round(transform.localScale.x - 0.7f, 1), (float)Math.Round(transform.localScale.y - 0.7f, 1), (float)Math.Round(transform.localScale.z - 0.7f, 1));
             PlayPotionoUseAudio();
-            SetCountText();            
+            SetCountText();
         }
-        
+
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, GetComponent<Collider>().bounds.extents.y + 0.1f))
         {
