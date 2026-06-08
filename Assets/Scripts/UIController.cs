@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
 
+    public GameObject resetSavedTimesConfirmationPanel;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -47,4 +49,24 @@ public class UIController : MonoBehaviour {
         SceneManager.LoadScene("LevelTwo");
     }
 
+    public void OnClickResetSavedTimesButton()
+    {
+        resetSavedTimesConfirmationPanel.SetActive(true);
+    }
+
+    public void OnClickResetSavedTimesYesButton()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            PlayerPrefs.DeleteKey("LatestTimeLevel" + i);
+            PlayerPrefs.DeleteKey("BestTimeLevel" + i);
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    public void OnClickResetSavedTimesNoButton()
+    {
+        resetSavedTimesConfirmationPanel.SetActive(false);
+    }
 }
