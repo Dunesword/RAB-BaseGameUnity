@@ -58510,8 +58510,13 @@ MonoBehaviour:
   - {fileID: 446908333}
   closedCoinBag: {fileID: 337145698}
   openBagBG: {fileID: 207635485}
+  count: 0
   doorAnimator: {fileID: 0}
   gameOverPanelAnimator: {fileID: 1244588481}
+  particleEffectArray:
+  - {fileID: 893832281}
+  - {fileID: 1620151818}
+  - {fileID: 1620151818}
 --- !u!54 &1994447358
 Rigidbody:
   m_ObjectHideFlags: 0

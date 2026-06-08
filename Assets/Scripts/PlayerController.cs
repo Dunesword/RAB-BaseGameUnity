@@ -49,9 +49,11 @@ public class PlayerController : MonoBehaviour
     //For movement based on camera
     Transform cam;
 
-    //crush related variables
-    //private float oppositeDotThreshold = -0.75f;
-    //private readonly List<Collision> activeCollisions = new();
+    //particle effects
+    public ParticleSystem[] particleEffectArray;
+    //[0] GrowParticles
+    //[1] ShrinkParticles
+    //[2] WaterParticles
 
 
     void Start()
@@ -114,6 +116,7 @@ public class PlayerController : MonoBehaviour
             deathText.text = "You drowned";
             audioSource.clip = waterSFX;
             audioSource.Play();
+            PlayEffect(particleEffectArray[2]);
             Death();
             Destroy(gameObject, 2.6f);
         }
@@ -229,6 +232,7 @@ public class PlayerController : MonoBehaviour
         {
             potions[1]--;
             transform.localScale = new Vector3((float)Math.Round(transform.localScale.x + 0.7f, 1), (float)Math.Round(transform.localScale.y + 0.7f, 1), (float)Math.Round(transform.localScale.z + 0.7f, 1));
+            PlayEffect(particleEffectArray[0]);
             PlayPotionoUseAudio();
             SetCountText();
         }
@@ -238,6 +242,7 @@ public class PlayerController : MonoBehaviour
         {
             potions[0]--;
             transform.localScale = new Vector3((float)Math.Round(transform.localScale.x - 0.7f, 1), (float)Math.Round(transform.localScale.y - 0.7f, 1), (float)Math.Round(transform.localScale.z - 0.7f, 1));
+            PlayEffect(particleEffectArray[1]);
             PlayPotionoUseAudio();
             SetCountText();
         }
@@ -270,5 +275,10 @@ public class PlayerController : MonoBehaviour
 
         openBagBG.SetActive(false);
         closedCoinBag.SetActive(true);
+    }
+
+    void PlayEffect(ParticleSystem effect)
+    {
+        effect.Play();
     }
 }
