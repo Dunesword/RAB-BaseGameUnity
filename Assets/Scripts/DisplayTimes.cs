@@ -12,8 +12,15 @@ public class DisplayTimes : MonoBehaviour
     {
         for (int i = 1; i <= levelTimes.Length; i++)
         {
-            levelTimes[i].text = levelTimes[i].text.Substring(0, levelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("LatestTimeLevel" + i));
-            bestLevelTimes[i].text = bestLevelTimes[i].text.Substring(0, bestLevelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("BestTimeLevel" + i));
+            if (PlayerPrefs.HasKey("LatestTimeLevel" + i))
+            {
+                levelTimes[i].text = levelTimes[i].text.Substring(0, levelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("LatestTimeLevel" + i));
+            }
+
+            if (PlayerPrefs.HasKey("BestTimeLevel" + i))
+            {
+                bestLevelTimes[i].text = bestLevelTimes[i].text.Substring(0, bestLevelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("BestTimeLevel" + i));
+            }
         }
     }
 

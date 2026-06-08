@@ -63,6 +63,7 @@ public class UIController : MonoBehaviour {
         }
 
         PlayerPrefs.Save();
+        resetSavedTimesConfirmationPanel.SetActive(false);
     }
 
     public void OnClickResetSavedTimesNoButton()
