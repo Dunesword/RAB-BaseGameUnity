@@ -203,7 +203,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true; // returns true value to signal game is over
             timeText.color = Color.green;  // changes timer's color
             
-            if (SceneManager.GetActiveScene().buildIndex == 0)
+            if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 doorAnimator.SetTrigger("OpenDoor");
             }

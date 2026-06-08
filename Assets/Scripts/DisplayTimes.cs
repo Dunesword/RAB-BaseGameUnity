@@ -10,7 +10,7 @@ public class DisplayTimes : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for (int i = 0; i < levelTimes.Length; i++)
+        for (int i = 1; i <= levelTimes.Length; i++)
         {
             levelTimes[i].text = levelTimes[i].text.Substring(0, levelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("LatestTimeLevel" + i));
             bestLevelTimes[i].text = bestLevelTimes[i].text.Substring(0, bestLevelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("BestTimeLevel" + i));
