@@ -12,6 +12,7 @@ public class MainMenuTransitionController : MonoBehaviour
     void Start()
     {
         transitionImage.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnClickStart()
