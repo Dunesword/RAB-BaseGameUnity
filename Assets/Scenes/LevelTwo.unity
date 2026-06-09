@@ -3509,7 +3509,7 @@ PrefabInstance:
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
@@ -3519,12 +3519,12 @@ PrefabInstance:
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6000001
+      value: -3.8999999
       objectReference: {fileID: 0}
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
@@ -3534,7 +3534,7 @@ PrefabInstance:
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.950001
+      value: -10.251966
       objectReference: {fileID: 0}
     - target: {fileID: 3822445386067416721, guid: 6a21acecf4e63a24983c5d2f67536a61,
         type: 3}
@@ -28660,7 +28660,7 @@ PrefabInstance:
     - target: {fileID: 7053556434467611358, guid: 4fd8babbf6c5d494090354c00ab3fc81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7499998
+      value: -1.5797107
       objectReference: {fileID: 0}
     - target: {fileID: 7053556434467611358, guid: 4fd8babbf6c5d494090354c00ab3fc81,
         type: 3}
@@ -28670,7 +28670,7 @@ PrefabInstance:
     - target: {fileID: 7053556434467611358, guid: 4fd8babbf6c5d494090354c00ab3fc81,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.299999
+      value: -11.477852
       objectReference: {fileID: 0}
     - target: {fileID: 7053556434467611358, guid: 4fd8babbf6c5d494090354c00ab3fc81,
         type: 3}
@@ -58704,7 +58704,7 @@ Transform:
   m_GameObject: {fileID: 1994447356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.1, y: 4.184, z: -35.82}
+  m_LocalPosition: {x: -1.7509999, y: 5.1900005, z: -24.330002}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58823,6 +58823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   pc: {fileID: 1994447357}
+  crushSFX: {fileID: 8300000, guid: 38b3039a0caa8c1468f9453b0832c0b4, type: 3}
 --- !u!43 &1994490224
 Mesh:
   m_ObjectHideFlags: 0
