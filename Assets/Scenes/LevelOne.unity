@@ -16073,7 +16073,7 @@ PrefabInstance:
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.807141
+      value: 5.7226276
       objectReference: {fileID: 0}
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
@@ -16083,22 +16083,22 @@ PrefabInstance:
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9172375
+      value: 0.9154958
       objectReference: {fileID: 0}
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.019709535
+      value: -0.031322088
       objectReference: {fileID: 0}
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.39521453
+      value: -0.39446408
       objectReference: {fileID: 0}
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.045743063
+      value: 0.072694175
       objectReference: {fileID: 0}
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
@@ -16113,7 +16113,7 @@ PrefabInstance:
     - target: {fileID: 8598198101518517804, guid: 3090ebdd5f96fbf40b26803e8ae4845d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 5.71
+      value: 9.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39663,7 +39663,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.16772993, y: -0.16179593, z: -0.027917923, w: 0.9720645}
   m_LocalPosition: {x: 1.3839408, y: 5.174259, z: -19.525}
-  m_LocalScale: {x: 1.75, y: 0.25, z: 5.7999997}
+  m_LocalScale: {x: 1.75, y: 0.25, z: 5.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1489940380}
