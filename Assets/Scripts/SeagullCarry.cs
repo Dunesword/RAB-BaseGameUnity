@@ -9,7 +9,7 @@ public class SeagullCarry : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && carriedPlayer == null)
+        if (collision.gameObject.CompareTag("Player") && carriedPlayer == null && collision.gameObject.transform.localScale.x < 1.9f)
         {
             carriedPlayer = collision.gameObject;
             playerRb = carriedPlayer.GetComponent<Rigidbody>();
