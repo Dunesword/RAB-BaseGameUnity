@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = count.ToString() + " / 10";
-        if(count >= 10)
+        if(count == 10)
         {
             Invoke(nameof(CloseCoinBag), 1f);
             gameOver = true; // returns true value to signal game is over
