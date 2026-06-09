@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float maxSpeed = 8.0f;
     public TMP_Text countText;
-    public TMP_Text winText;
     public TMP_Text timeText;  //  variable to display the timer text in Unity
     public TMP_Text deathText;
     public float startingTime;  // variable to hold the game's starting time
@@ -61,7 +60,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
-        winText.text = "";
         startingTime = Time.time;
         gameOver = false;
         potions = new int[] {0, 0};
