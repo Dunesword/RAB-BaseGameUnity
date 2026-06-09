@@ -7,10 +7,21 @@ public class SeagullCarry : MonoBehaviour
     private GameObject carriedPlayer;
     private Rigidbody playerRb;
 
+    public AudioClip seagullSFX;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && carriedPlayer == null && collision.gameObject.transform.localScale.x < 1.9f)
         {
+            audioSource.clip = seagullSFX;
+            audioSource.Play();
+
             carriedPlayer = collision.gameObject;
             playerRb = carriedPlayer.GetComponent<Rigidbody>();
             
