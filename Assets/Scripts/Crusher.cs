@@ -11,8 +11,11 @@ public class Crusher : MonoBehaviour
     public AudioClip crushSFX;
     private AudioSource audioSource;
 
+    private bool crushed;
+
     void Start()
     {
+        crushed = false;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -57,11 +60,10 @@ public class Crusher : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (CrushCheck())
+        if (CrushCheck() && !crushed)
         {
-            
-            audioSource.clip = crushSFX;
-            audioSource.Play();
+            crushed = true;
+            audioSource.PlayOneShot(crushSFX, 0.7f);
             pc.deathText.text = "You got crushed";
             pc.Death();
             Destroy(gameObject, 0.15f);
