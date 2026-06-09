@@ -6485,13 +6485,14 @@ GameObject:
   - component: {fileID: 316789232}
   - component: {fileID: 316789234}
   - component: {fileID: 316789233}
+  - component: {fileID: 316789235}
   m_Layer: 5
   m_Name: Transitions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &316789232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6550,6 +6551,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316789231}
   m_CullTransparentMesh: 1
+--- !u!95 &316789235
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316789231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11f78ed4d9935a04988dc771dc7abde8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &320462024
 GameObject:
   m_ObjectHideFlags: 0
@@ -16381,7 +16404,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The storm be upon ya! \n\n"
+  m_text: "The storm be upon ya! \n\nTake shelter below deck and collect the rest
+    of yer dabloons, then see if you can sleep through the worst of it!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46f911b7318bace4c82c0197633943e4, type: 2}
   m_sharedMaterial: {fileID: 105661706475929687, guid: 46f911b7318bace4c82c0197633943e4,
@@ -16409,8 +16433,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -39536,6 +39560,8 @@ MonoBehaviour:
   waterSFX: {fileID: 8300000, guid: 9e3dc43f34321894b868e6594a0faf17, type: 3}
   potionUseSFX: {fileID: 8300000, guid: b8abdc315f4815f45ba6eabd569b23e2, type: 3}
   boxBreakSFX: {fileID: 8300000, guid: 202db87754841394b911a5cdfc3a3c82, type: 3}
+  crushSFX: {fileID: 0}
+  audioSource: {fileID: 0}
   potions: 
   potionsText:
   - {fileID: 2061479475}
