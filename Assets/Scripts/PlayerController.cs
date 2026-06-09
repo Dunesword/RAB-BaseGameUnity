@@ -160,6 +160,12 @@ public class PlayerController : MonoBehaviour
                 transitionAnimator.SetTrigger("EnterDoor");
                 Invoke("LoadScenes", 8.0f);
             }
+
+            if (SceneManager.GetActiveScene().name == "LevelTwo")
+            {
+                transitionAnimator.SetTrigger("EnterBed");
+                Invoke("LoadScenes", 2.0f);
+            }
         }
 
     }

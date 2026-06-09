@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
 
     public GameObject resetSavedTimesConfirmationPanel;
+    public GameObject transitionImage;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        if (SceneManager.GetActiveScene().name == "WinMenuView")
+        {
+            Invoke("DestroyTransitions", 2.0f);
+        }
     }
 
 	public void OnClickQuitButton()
@@ -69,5 +76,10 @@ public class UIController : MonoBehaviour {
     public void OnClickResetSavedTimesNoButton()
     {
         resetSavedTimesConfirmationPanel.SetActive(false);
+    }
+
+    void DestroyTransitions()
+    {
+        Destroy(transitionImage);
     }
 }
