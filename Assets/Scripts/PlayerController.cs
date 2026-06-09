@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip waterSFX;
     public AudioClip potionUseSFX;
     public AudioClip boxBreakSFX;
-    private AudioSource audioSource;
+    public AudioClip crushSFX;
+    public AudioSource audioSource;
 
     //Items and UI arrays
     public int[] potions;
