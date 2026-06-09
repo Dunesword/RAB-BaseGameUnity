@@ -8,6 +8,9 @@ public class Crusher : MonoBehaviour
 
     private List<ContactPoint> contactPoints = new List<ContactPoint>();
 
+    public AudioClip crushSFX;
+    private AudioSource audioSource;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Crusher"))
@@ -51,11 +54,12 @@ public class Crusher : MonoBehaviour
     {
         if (CrushCheck())
         {
+            
+            audioSource.clip = crushSFX;
+            audioSource.Play();
             pc.deathText.text = "You got crushed";
-            pc.audioSource.clip = pc.crushSFX;
-            pc.audioSource.Play();
             pc.Death();
-            Destroy(gameObject);
+            Destroy(gameObject, 0.15f);
         }
     }
 
