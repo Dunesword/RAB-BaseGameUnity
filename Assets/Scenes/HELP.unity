@@ -1059,8 +1059,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279519314
-  m_fontColor: {r: 0.3207547, g: 0.28377068, b: 0.07686008, a: 1}
+    rgba: 4278989636
+  m_fontColor: {r: 0.26666668, g: 0.2, b: 0.047058824, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1785,6 +1785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetSavedTimesConfirmationPanel: {fileID: 0}
+  transitionImage: {fileID: 0}
 --- !u!4 &1922595862
 Transform:
   m_ObjectHideFlags: 0
