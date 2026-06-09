@@ -17,13 +17,13 @@ public class DisplayTimes : MonoBehaviour
         {
             if (PlayerPrefs.HasKey("LatestTimeLevel" + i))
             {
-                levelTimes[i].text = TimerToString(PlayerPrefs.GetFloat("LatestTimeLevel" + i));
+                levelTimes[i - 1].text = TimerToString(PlayerPrefs.GetFloat("LatestTimeLevel" + i));
                 totalTime += PlayerPrefs.GetFloat("LatestTimeLevel" + i);
             }
 
             if (PlayerPrefs.HasKey("BestTimeLevel" + i))
             {
-                bestLevelTimes[i].text = bestLevelTimes[i].text.Substring(0, bestLevelTimes[i].text.IndexOf(':') + 2) + TimerToString(PlayerPrefs.GetFloat("BestTimeLevel" + i));
+                bestLevelTimes[i - 1].text = TimerToString(PlayerPrefs.GetFloat("BestTimeLevel" + i));
             }
         }
         totalTimeText.text = totalTimeText.text.Substring(0, totalTimeText.text.IndexOf(':') + 2) + TimerToString(totalTime);

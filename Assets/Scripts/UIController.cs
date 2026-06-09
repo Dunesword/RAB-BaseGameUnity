@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -63,7 +62,7 @@ public class UIController : MonoBehaviour {
 
     public void OnClickResetSavedTimesYesButton()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 1; i <= 2; i++)
         {
             PlayerPrefs.DeleteKey("LatestTimeLevel" + i);
             PlayerPrefs.DeleteKey("BestTimeLevel" + i);
