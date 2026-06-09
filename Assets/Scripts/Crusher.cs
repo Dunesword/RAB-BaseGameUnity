@@ -52,7 +52,7 @@ public class Crusher : MonoBehaviour
         if (CrushCheck())
         {
             pc.deathText.text = "You got crushed";
-            pc.audioSource.clip = crushSFX;
+            pc.audioSource.clip = pc.crushSFX;
             pc.audioSource.Play();
             pc.Death();
             Destroy(gameObject);
