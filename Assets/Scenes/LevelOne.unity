@@ -6492,7 +6492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &316789232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19942,8 +19942,8 @@ Transform:
   m_GameObject: {fileID: 1202281381}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 4, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.1400001, z: 0}
+  m_LocalScale: {x: 3, y: 4, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1489940380}
@@ -33179,13 +33179,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bc86f561c9bbd9b4f9570a5b8fb4cbc3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.152
-  m_Pitch: 0.3
+  m_Volume: 0.2
+  m_Pitch: 0.8
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 111
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -39560,8 +39560,6 @@ MonoBehaviour:
   waterSFX: {fileID: 8300000, guid: 9e3dc43f34321894b868e6594a0faf17, type: 3}
   potionUseSFX: {fileID: 8300000, guid: b8abdc315f4815f45ba6eabd569b23e2, type: 3}
   boxBreakSFX: {fileID: 8300000, guid: 202db87754841394b911a5cdfc3a3c82, type: 3}
-  crushSFX: {fileID: 0}
-  audioSource: {fileID: 0}
   potions: 
   potionsText:
   - {fileID: 2061479475}
@@ -39582,6 +39580,7 @@ MonoBehaviour:
   count: 0
   doorAnimator: {fileID: 1900543523}
   gameOverPanelAnimator: {fileID: 1244588481}
+  transitionAnimator: {fileID: 316789235}
   particleEffectArray:
   - {fileID: 1627544517}
   - {fileID: 1909128731}

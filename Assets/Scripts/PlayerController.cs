@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     //Animators
     public Animator doorAnimator;
     public Animator gameOverPanelAnimator; // fade-in animation
+    public Animator transitionAnimator; // To use for exit trigger
 
     //For movement based on camera
     Transform cam;
@@ -154,9 +155,18 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("NextLevelEntrance") && count >= 10)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (SceneManager.GetActiveScene().name == "LevelOne")
+            {
+                transitionAnimator.SetTrigger("EnterDoor");
+                Invoke("LoadScenes", 8.0f);
+            }
         }
 
+    }
+
+    void LoadScenes()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Its own method so we can invoke it with a delay
     }
 
     public void CoinCollected()
